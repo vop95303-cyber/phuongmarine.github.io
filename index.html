@@ -78,8 +78,8 @@
 
         /* Trạng thái thông báo gửi Form */
         #form-status { margin-bottom: 20px; padding: 12px; border-radius: 4px; font-size: 14px; font-weight: 600; display: none; text-align: center; }
-        #form-status.success { display: block; background-color: #d1fae5; color: #065f46; border: 1px solid #10b981; }
-        #form-status.error { display: block; background-color: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+        #form-status.success { display: block !important; background-color: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+        #form-status.error { display: block !important; background-color: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
 
         /* Footer */
         footer { background-color: #1a252f; color: #7f8c8d; text-align: center; padding: 25px 20px; font-size: 13px; margin-top: 40px; }
@@ -275,6 +275,12 @@
                     status.innerText = "🚀 Gửi thành công! Chúng tôi sẽ liên hệ lại ngay qua Số điện thoại/Zalo.";
                     status.className = "success";
                     form.reset(); 
+                    
+                    // Tự động ẩn thông báo thành công sau 4 giây
+                    setTimeout(() => {
+                        status.className = "";
+                        status.style.display = "none";
+                    }, 4000);
                 } else {
                     status.innerText = "❌ Gửi yêu cầu thất bại. Vui lòng kiểm tra lại thông tin hoặc thử lại sau.";
                     status.className = "error";

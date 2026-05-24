@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kỹ thuật Điện Tàu Thủy - KHANH HUYEN</title>
+    
+    <!-- 1. THÊM LOGO VÀO TAB TRÌNH DUYỆT -->
+    <link rel="icon" type="image/jpeg" href="image/lolo.jpg">
+
     <style>
         /* Reset và Layout cơ sở */
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
@@ -13,7 +17,22 @@
         /* Header & Navigation */
         header { background-color: #1a252f; color: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-size: 20px; font-weight: bold; color: #3498db; }
+        
+        /* ĐÃ CẤU HÌNH CSS ĐỂ LOGO VÀ CHỮ CĂN THẲNG HÀNG */
+        .logo { 
+            font-size: 20px; 
+            font-weight: bold; 
+            color: #3498db; 
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Khoảng cách giữa ảnh logo và chữ */
+        }
+        .logo img {
+            height: 35px; /* Giới hạn chiều cao logo hợp lý trên thanh header */
+            width: auto;
+            object-fit: contain;
+        }
+
         .nav-menu { list-style: none; display: flex; gap: 20px; }
         .nav-menu a { color: #ebf5fb; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
         .nav-menu a:hover { color: #3498db; }
@@ -68,7 +87,7 @@
             transform: scale(1.05);
         }
 
-        /* Grid Sản phẩm (Đã loại bỏ chiều cao ảnh cũ để tập trung vào thông tin card) */
+        /* Grid Sản phẩm */
         .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; }
         .card { background: white; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.05); border: 1px solid #e1e8ed; transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; overflow: hidden; }
         .card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
@@ -182,7 +201,11 @@
 
     <header>
         <div class="nav-container">
-            <div class="logo">KHANH HUYEN</div>
+            <!-- 2. ĐÃ SỬA DÒNG 185: CHÈN ẢNH LOGO VÀO CẠNH CHỮ KHANH HUYEN -->
+            <div class="logo">
+                <img src="image/lolo.jpg" alt="Logo">
+                KHANH HUYEN
+            </div>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#san-pham">Sản Phẩm</a></li>

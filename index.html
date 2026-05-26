@@ -103,11 +103,11 @@
         .btn-danger { background-color: #e74c3c; color: white; width: auto; }
         .btn-danger:hover { background-color: #c0392b; }
         
-        /* --- GIAO DIỆN LƯỚI KHÔNG GIAN MÔ HÌNH 3D --- */
+        /* --- GIAO DIỆN LƯỚI KHÔNG GIAN MÔ HÌNH 3D (ĐÃ TỐI ƯU 6 CỘT TỰ CO GIÃN) --- */
         .grid-3d { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
+            gap: 15px; 
             width: 100%;
             margin-top: 20px;
         }
@@ -127,9 +127,20 @@
             transform: translateY(-5px); 
             box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
         }
+        
+        /* Class tạm khóa khi chưa có dữ liệu */
+        .card-3d.disabled {
+            cursor: not-allowed;
+            opacity: 0.75;
+        }
+        .card-3d.disabled:hover {
+            transform: none;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
         .img-container-3d {
             width: 100%;
-            height: 200px;
+            height: 140px; 
             background-color: #eaedf1;
             overflow: hidden;
             position: relative;
@@ -140,34 +151,43 @@
             object-fit: cover;
             transition: transform 0.3s;
         }
-        .card-3d:hover .img-container-3d img {
+        .card-3d:not(.disabled):hover .img-container-3d img {
             transform: scale(1.05);
         }
         .badge-3d {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 8px;
+            right: 8px;
             background: rgba(26, 37, 47, 0.85);
             color: #3498db;
-            padding: 4px 8px;
+            padding: 2px 6px;
             border-radius: 4px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: bold;
             border: 1px solid #3498db;
         }
+        .badge-waiting {
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
         .info-3d { 
-            padding: 15px; 
+            padding: 12px 8px; 
             text-align: center; 
             background: #fff;
             border-top: 1px solid #f0f2f5;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .info-3d h3 { 
-            font-size: 16px; 
+            font-size: 13px; 
             color: #1a252f; 
-            margin-bottom: 5px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
         }
         .info-3d span {
-            font-size: 12px;
+            font-size: 11px;
             color: #7f8c8d;
         }
 
@@ -339,15 +359,70 @@
                 <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 20px;">Click vào mô hình bạn quan tâm để mở không gian tương tác 3D (xoay, phóng to, bóc tách linh kiện) trực tiếp từ bản vẽ kỹ thuật Inventor.</p>
                 
                 <div class="grid-3d">
-                    <!-- MÔ HÌNH: TỦ NẠP -->
+                    <!-- THẺ 1: TỦ NẠP (ĐÃ CÓ DỮ LIỆU) -->
                     <a href="https://autode.sk/4dJTsk1" target="_blank" rel="noopener noreferrer" class="card-3d">
                         <div class="img-container-3d">
                             <img src="image/TUNAP.png" alt="Mô hình 3D Tủ Nạp">
                             <div class="badge-3d">⟳ Xoay 3D</div>
                         </div>
                         <div class="info-3d">
-                            <h3>TỦ NẠP ẮC QUY TỰ ĐỘNG</h3>
-                            <span>Xem kết cấu 3D & Linh kiện</span>
+                            <h3>Tủ Nạp Ắc Quy</h3>
+                            <span>Xem kết cấu 3D</span>
+                        </div>
+                    </a>
+
+                    <!-- THẺ 2: SKELETON CHỜ UPDATE -->
+                    <a href="javascript:void(0);" class="card-3d disabled">
+                        <div class="img-container-3d">
+                            <div class="badge-3d badge-waiting">⏳ Chờ update</div>
+                        </div>
+                        <div class="info-3d">
+                            <h3>Mô hình 3D số 2</h3>
+                            <span>Đang cấu hình...</span>
+                        </div>
+                    </a>
+
+                    <!-- THẺ 3: SKELETON CHỜ UPDATE -->
+                    <a href="javascript:void(0);" class="card-3d disabled">
+                        <div class="img-container-3d">
+                            <div class="badge-3d badge-waiting">⏳ Chờ update</div>
+                        </div>
+                        <div class="info-3d">
+                            <h3>Mô hình 3D số 3</h3>
+                            <span>Đang cấu hình...</span>
+                        </div>
+                    </a>
+
+                    <!-- THẺ 4: SKELETON CHỜ UPDATE -->
+                    <a href="javascript:void(0);" class="card-3d disabled">
+                        <div class="img-container-3d">
+                            <div class="badge-3d badge-waiting">⏳ Chờ update</div>
+                        </div>
+                        <div class="info-3d">
+                            <h3>Mô hình 3D số 4</h3>
+                            <span>Đang cấu hình...</span>
+                        </div>
+                    </a>
+
+                    <!-- THẺ 5: SKELETON CHỜ UPDATE -->
+                    <a href="javascript:void(0);" class="card-3d disabled">
+                        <div class="img-container-3d">
+                            <div class="badge-3d badge-waiting">⏳ Chờ update</div>
+                        </div>
+                        <div class="info-3d">
+                            <h3>Mô hình 3D số 5</h3>
+                            <span>Đang cấu hình...</span>
+                        </div>
+                    </a>
+
+                    <!-- THẺ 6: SKELETON CHỜ UPDATE -->
+                    <a href="javascript:void(0);" class="card-3d disabled">
+                        <div class="img-container-3d">
+                            <div class="badge-3d badge-waiting">⏳ Chờ update</div>
+                        </div>
+                        <div class="info-3d">
+                            <h3>Mô hình 3D số 6</h3>
+                            <span>Đang cấu hình...</span>
                         </div>
                     </a>
                 </div>

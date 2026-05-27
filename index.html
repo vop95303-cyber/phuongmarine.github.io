@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kỹ thuật Điện Tàu Thủy - KHANH HUYEN</title>
     
-    <!-- 1. THÊM LOGO VÀO TAB TRÌNH DUYỆT -->
     <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
 
     <style>
@@ -52,7 +51,7 @@
         section { scroll-margin-top: 80px; padding: 60px 0; }
         .section-title { font-size: 24px; color: #2c3e50; margin-bottom: 25px; padding-left: 10px; border-left: 5px solid #3498db; }
         
-        /* --- CSS CHO SLIDER ẢNH CHẠY NGANG --- */
+        /* --- CSS CHO SLIDER ẢNH CHẠY NGANG VÔ HẠN (ĐÃ TỐI ƯU SỬA LỖI LỆCH KHOẢNG TRỐNG) --- */
         .slider-container {
             width: 100%;
             overflow: hidden;
@@ -62,19 +61,26 @@
             border: 1px solid #e1e8ed;
             padding: 20px;
             margin-bottom: 30px;
+            position: relative;
         }
         .slider-track {
             display: flex;
             gap: 15px;
-            transition: transform 0.5s ease-in-out;
+            width: max-content;
+            animation: scrollHorizontal 28s linear infinite;
+        }
+        /* Tạm dừng chạy khi di chuột vào slider sản phẩm */
+        .slider-container:hover .slider-track {
+            animation-play-state: paused;
         }
         .slider-item {
-            min-width: calc(25% - 12px); 
+            width: 265px; 
             height: 180px;
             overflow: hidden;
             border-radius: 6px;
             background-color: #eaedf1;
             border: 1px solid #f0f2f5;
+            flex-shrink: 0;
         }
         .slider-item img {
             width: 100%;
@@ -84,6 +90,12 @@
         }
         .slider-item img:hover {
             transform: scale(1.05);
+        }
+
+        /* Khớp nối chu kỳ tịnh tiến 50% độ rộng của track đã nhân bản */
+        @keyframes scrollHorizontal {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-50% - 7.5px)); } 
         }
 
         /* Grid Sản phẩm */
@@ -103,7 +115,7 @@
         .btn-danger { background-color: #e74c3c; color: white; width: auto; }
         .btn-danger:hover { background-color: #c0392b; }
         
-        /* --- GIAO DIỆN LƯỚI KHÔNG GIAN MÔ HÌNH 3D (ĐÃ TỐI ƯU 6 CỘT TỰ CO GIÃN) --- */
+        /* --- GIAO DIỆN LƯỚI KHÔNG GIAN MÔ HÌNH 3D --- */
         .grid-3d { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
@@ -260,7 +272,7 @@
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 15px; padding: 15px 10px; }
             .nav-menu { gap: 12px; flex-wrap: wrap; justify-content: center; }
-            .slider-item { min-width: calc(50% - 8px); height: 130px; }
+            .slider-item { width: 160px; height: 130px; }
             .grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 26px; }
             .hero { padding: 60px 0; }
@@ -304,7 +316,6 @@
             <div class="container">
                 <h2 class="section-title">Danh Mục Sản Phẩm Kinh Doanh</h2>
                 
-                <!-- KHU VỰC LIST ẢNH CHẠY NGANG (SLIDER) -->
                 <div class="slider-container">
                     <div class="slider-track" id="sliderTrack">
                         <div class="slider-item"><img src="image/busbar.jpg" alt="Hệ thống thanh cái"></div>
@@ -319,9 +330,7 @@
                     </div>
                 </div>
 
-                <!-- 2 CARD CHI TIẾT SẢN PHẨM -->
                 <div class="grid">
-                    <!-- Sản phẩm 1 -->
                     <div class="card">
                         <div class="card-content">
                             <div>
@@ -335,7 +344,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Sản phẩm 2 -->
                     <div class="card">
                         <div class="card-content">
                             <div>
@@ -359,7 +367,6 @@
                 <p style="color: #7f8c8d; font-size: 14px; margin-bottom: 20px;">Click vào mô hình bạn quan tâm để mở không gian tương tác 3D (xoay, phóng to, bóc tách linh kiện) trực tiếp từ bản vẽ kỹ thuật Inventor.</p>
                 
                 <div class="grid-3d">
-                    <!-- THẺ 1: TỦ NẠP (ĐÃ CÓ DỮ LIỆU) -->
                     <a href="https://autode.sk/4dJTsk1" target="_blank" rel="noopener noreferrer" class="card-3d">
                         <div class="img-container-3d">
                             <img src="image/TUNAP.png" alt="Mô hình 3D Tủ Nạp">
@@ -371,7 +378,6 @@
                         </div>
                     </a>
 
-                    <!-- THẺ 2: SKELETON CHỜ UPDATE -->
                     <a href="javascript:void(0);" class="card-3d disabled">
                         <div class="img-container-3d">
                             <div class="badge-3d badge-waiting">⏳ Chờ update</div>
@@ -382,7 +388,6 @@
                         </div>
                     </a>
 
-                    <!-- THẺ 3: SKELETON CHỜ UPDATE -->
                     <a href="javascript:void(0);" class="card-3d disabled">
                         <div class="img-container-3d">
                             <div class="badge-3d badge-waiting">⏳ Chờ update</div>
@@ -393,7 +398,6 @@
                         </div>
                     </a>
 
-                    <!-- THẺ 4: SKELETON CHỜ UPDATE -->
                     <a href="javascript:void(0);" class="card-3d disabled">
                         <div class="img-container-3d">
                             <div class="badge-3d badge-waiting">⏳ Chờ update</div>
@@ -404,7 +408,6 @@
                         </div>
                     </a>
 
-                    <!-- THẺ 5: SKELETON CHỜ UPDATE -->
                     <a href="javascript:void(0);" class="card-3d disabled">
                         <div class="img-container-3d">
                             <div class="badge-3d badge-waiting">⏳ Chờ update</div>
@@ -415,7 +418,6 @@
                         </div>
                     </a>
 
-                    <!-- THẺ 6: SKELETON CHỜ UPDATE -->
                     <a href="javascript:void(0);" class="card-3d disabled">
                         <div class="img-container-3d">
                             <div class="badge-3d badge-waiting">⏳ Chờ update</div>
@@ -461,7 +463,7 @@
 
         <section id="ngoai-khoa">
             <div class="container">
-                <h2 class="section-title">Hoạt Động Ngoại Khóa & Phát Triển</h2>
+                <h2 class="section-title">Hoạt Động Ngoại Khoa & Phát Triển</h2>
                 <div class="box-full">
                     <ul class="activity-list">
                         <li>🔹 Nghiên cứu, ứng dụng các giải pháp mô phỏng 3D tương tác trực quan và tự động hóa thiết kế nhằm tối ưu hóa tiến độ bàn giao bản vẽ cho khách hàng.</li>
@@ -517,33 +519,19 @@
     </footer>
 
     <script>
-        // --- LOGIC HOẠT ĐỘNG SLIDER CHẠY ẢNH TỰ ĐỘNG ---
-        const track = document.getElementById('sliderTrack');
-        let index = 0;
-
-        function moveSlider() {
-            const items = document.querySelectorAll('.slider-item');
-            const totalItems = items.length;
-            const itemsPerScreen = window.innerWidth <= 768 ? 2 : 4;
-            const maxIndex = totalItems - itemsPerScreen;
-
-            index++;
-            if (index > maxIndex) { index = 0; }
-
-            const itemWidth = items[0].getBoundingClientRect().width;
-            const gap = window.innerWidth <= 768 ? 16 : 15;
-            const amountToMove = index * (itemWidth + gap);
-
-            track.style.transform = `translateX(-${amountToMove}px)`;
+        // --- LOGIC NHÂN BẢN SLIDER ẢNH CHẠY VÔ HẠN (ĐÃ FIX KHÔNG KHỰNG HÌNH) ---
+        const sliderTrack = document.getElementById('sliderTrack');
+        if (sliderTrack) {
+            sliderTrack.innerHTML += sliderTrack.innerHTML;
         }
-        setInterval(moveSlider, 3000);
-        window.addEventListener('resize', () => { index = 0; track.style.transform = `translateX(0px)`; });
 
-        // --- NHÂN BẢN NỘI DUNG LIST DỰ ÁN ĐỂ CHẠY LIÊN TỤC KHÔNG BỊ KHỐNG TRỐNG ---
+        // --- NHÂN BẢN NỘI DUNG LIST DỰ ÁN ĐỂ CHẠY LIÊN TỤC KHÔNG BỊ KHOẢNG TRỐNG ---
         const list = document.getElementById('projectList');
-        list.innerHTML += list.innerHTML; 
+        if (list) {
+            list.innerHTML += list.innerHTML; 
+        }
 
-        // --- SCRIPT XỬ LÝ FORM ĐĂNG KÝ ---
+        // --- SCRIPT XỬ LÝ FORM ĐĂNG KÝ QUA FORMSPREE ---
         const form = document.getElementById("ajax-contact-form");
         const status = document.getElementById("form-status");
         const submitBtn = document.getElementById("submit-btn");

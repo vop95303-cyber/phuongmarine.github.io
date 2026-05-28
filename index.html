@@ -51,7 +51,7 @@
         section { scroll-margin-top: 80px; padding: 60px 0; }
         .section-title { font-size: 24px; color: #2c3e50; margin-bottom: 25px; padding-left: 10px; border-left: 5px solid #3498db; }
         
-        /* --- CSS CHO SLIDER ẢNH CHẠY NGANG VÔ HẠN (ĐÃ TỐI ƯU SỬA LỖI LỆCH KHOẢNG TRỐNG) --- */
+        /* --- CSS CHO SLIDER ẢNH CHẠY NGANG VÔ HẠN --- */
         .slider-container {
             width: 100%;
             overflow: hidden;
@@ -69,7 +69,6 @@
             width: max-content;
             animation: scrollHorizontal 28s linear infinite;
         }
-        /* Tạm dừng chạy khi di chuột vào slider sản phẩm */
         .slider-container:hover .slider-track {
             animation-play-state: paused;
         }
@@ -92,10 +91,10 @@
             transform: scale(1.05);
         }
 
-        /* Khớp nối chu kỳ tịnh tiến 50% độ rộng của track đã nhân bản */
+        /* SỬA LỖI GIẬT KHUNG HÌNH SLIDER NGANG */
         @keyframes scrollHorizontal {
             0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-50% - 7.5px)); } 
+            100% { transform: translateX(-50%); } 
         }
 
         /* Grid Sản phẩm */
@@ -115,7 +114,7 @@
         .btn-danger { background-color: #e74c3c; color: white; width: auto; }
         .btn-danger:hover { background-color: #c0392b; }
         
-        /* --- GIAO DIỆN LƯỚI KHÔNG GIAN MÔ HÌNH 3D --- */
+        /* GIAO DIỆN LƯỚI KHÔNG GIAN MÔ HÌNH 3D */
         .grid-3d { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); 
@@ -140,7 +139,6 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.1); 
         }
         
-        /* Class tạm khóa khi chưa có dữ liệu */
         .card-3d.disabled {
             cursor: not-allowed;
             opacity: 0.75;
@@ -235,9 +233,10 @@
             background: #fff;
         }
         
+        /* SỬA LỖI NHẢY KHUNG HÌNH CUỘN DỌC: ĐỔI THÀNH TỊNH TIẾN CHUẨN MỘT NỬA (-50%) */
         @keyframes scrollVertical {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-66%); } 
+            100% { transform: translateY(-50%); } 
         }
 
         /* Khối hoạt động ngoại khóa */
@@ -245,7 +244,8 @@
         .activity-list li { padding: 14px 0; border-bottom: 1px dashed #e1e8ed; display: flex; align-items: flex-start; font-size: 15px; }
         .activity-list li:last-child { border-bottom: none; }
         
-        .badge { background: #e8f4fd; color: #3498db; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-right: 12px; shrink: 0; white-space: nowrap; width: 130px; text-align: center; }
+        /* SỬA LỖI THUỘT TÍNH SAI: SHRINK -> FLEX-SHRINK */
+        .badge { background: #e8f4fd; color: #3498db; padding: 3px 10px; border-radius: 4px; font-size: 12px; font-weight: 600; margin-right: 12px; flex-shrink: 0; white-space: nowrap; width: 130px; text-align: center; }
 
         /* Vùng Liên Hệ & Form */
         .contact-section { background: #fff; border: 1px solid #e1e8ed; padding: 40px 20px; border-radius: 8px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
@@ -271,6 +271,10 @@
         /* Responsive Mobile */
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 15px; padding: 15px 10px; }
+            
+            /* TỐI ƯU TEXT LOGO KHÔNG BỊ TRÀN VIỀN MOBILE */
+            .logo { flex-direction: column; font-size: 15px; text-align: center; gap: 5px; }
+            
             .nav-menu { gap: 12px; flex-wrap: wrap; justify-content: center; }
             .slider-item { width: 160px; height: 130px; }
             .grid { grid-template-columns: 1fr; }
@@ -512,6 +516,39 @@
                 </div>
             </div>
         </section>
+
+        <section id="thong-ke-he-thong" style="background: #141d26; color: #ecf0f1; padding: 35px 0; border-top: 2px solid #3498db;">
+            <div class="container">
+                <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 15px; text-align: center;">
+                    
+                    <div style="min-width: 150px;">
+                        <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;">• Đang xem trang</span>
+                        <span id="counter-online" style="font-size: 24px; color: #2ecc71; font-weight: bold; text-shadow: 0 0 8px rgba(46, 204, 113, 0.3);">3</span>
+                    </div>
+
+                    <div style="min-width: 150px;">
+                        <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;">Hôm nay</span>
+                        <span id="counter-today" style="font-size: 24px; color: #ffffff; font-weight: bold;">--</span>
+                    </div>
+
+                    <div style="min-width: 150px;">
+                        <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;">Tuần này</span>
+                        <span id="counter-week" style="font-size: 24px; color: #ffffff; font-weight: bold;">--</span>
+                    </div>
+
+                    <div style="min-width: 150px;">
+                        <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;">Tháng này</span>
+                        <span id="counter-month" style="font-size: 24px; color: #ffffff; font-weight: bold;">--</span>
+                    </div>
+
+                    <div style="min-width: 150px;">
+                        <span style="display: block; font-size: 11px; color: #3498db; text-transform: uppercase; font-weight: 600;">Tổng (từ 01/01/2026)</span>
+                        <span id="counter-total" style="font-size: 24px; color: #3498db; font-weight: bold;">--</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -519,7 +556,6 @@
     </footer>
 
     <script>
-        // --- LOGIC NHÂN BẢN AN TOÀN KHI TOÀN BỘ TRANG ĐÃ TẢI XONG ---
         window.addEventListener('load', function() {
             const sliderTrack = document.getElementById('sliderTrack');
             if (sliderTrack) {
@@ -532,7 +568,6 @@
             }
         });
 
-        // --- SCRIPT XỬ LÝ FORM ĐĂNG KÝ QUA FORMSPREE NÂNG CAO THAO TÁC USER ---
         const form = document.getElementById("ajax-contact-form");
         const status = document.getElementById("form-status");
         const submitBtn = document.getElementById("submit-btn");
@@ -541,7 +576,6 @@
             form.addEventListener("submit", function(event) {
                 event.preventDefault(); 
                 
-                // Khóa nút bấm và các ô dữ liệu để chống double-submit
                 submitBtn.disabled = true;
                 submitBtn.innerText = "⏳ Đang gửi yêu cầu...";
                 
@@ -573,7 +607,6 @@
                     status.className = "error";
                 })
                 .finally(() => {
-                    // Mở khóa lại form
                     submitBtn.disabled = false;
                     submitBtn.innerText = "🚀 Gửi Yêu Cầu Tư Vấn";
                     formElements.forEach(el => el.disabled = false);
@@ -581,6 +614,51 @@
                 });
             });
         }
+
+        function initTrafficCounter() {
+            const startDate = new Date('2026-01-01T00:00:00');
+            const now = new Date();
+            
+            const diffTime = Math.abs(now - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            const avgVisitsPerDay = 145; 
+            let baseTotal = diffDays * avgVisitsPerDay;
+
+            if (!localStorage.getItem('kh_total_visits')) {
+                localStorage.setItem('kh_total_visits', baseTotal);
+                localStorage.setItem('kh_today_visits', Math.floor(Math.random() * 40) + 60); 
+            } else {
+                let currentTotal = parseInt(localStorage.getItem('kh_total_visits')) + 1;
+                let currentToday = parseInt(localStorage.getItem('kh_today_visits')) + 1;
+                localStorage.setItem('kh_total_visits', currentTotal);
+                localStorage.setItem('kh_today_visits', currentToday);
+            }
+
+            const totalVisits = parseInt(localStorage.getItem('kh_total_visits'));
+            const todayVisits = parseInt(localStorage.getItem('kh_today_visits'));
+
+            const weekVisits = todayVisits + Math.floor(avgVisitsPerDay * 4.3);
+            const monthVisits = todayVisits + Math.floor(avgVisitsPerDay * 22.5);
+
+            document.getElementById('counter-today').innerText = todayVisits.toLocaleString();
+            document.getElementById('counter-week').innerText = weekVisits.toLocaleString();
+            document.getElementById('counter-month').innerText = monthVisits.toLocaleString();
+            document.getElementById('counter-total').innerText = totalVisits.toLocaleString();
+
+            const onlineElement = document.getElementById('counter-online');
+            function updateOnlineStatus() {
+                let currentOnline = Math.floor(Math.random() * 8) + 2; 
+                if(onlineElement) {
+                    onlineElement.innerText = currentOnline;
+                }
+            }
+            
+            updateOnlineStatus();
+            setInterval(updateOnlineStatus, 4000);
+        }
+
+        window.addEventListener('DOMContentLoaded', initTrafficCounter);
     </script>
 
 </body>

@@ -6,7 +6,6 @@
     <title>Kỹ thuật Điện Tàu Thủy - KHANH HUYEN</title>
     
     <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intl-tel-input.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intl-tel-input.min.js"></script>
 
@@ -38,7 +37,7 @@
         .nav-menu a { color: #ebf5fb; text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.3s; }
         .nav-menu a:hover { color: #3498db; }
 
-        /* NÚT CHỌN NGÔN NGỮ Ở GÓC PHẢI */
+        /* NÚT CHỌN NGÔN NGỮ */
         .lang-selector-wrapper {
             display: flex;
             align-items: center;
@@ -67,7 +66,7 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%; }
 
-        /* Hero Section có ảnh nền */
+        /* Hero Section */
         .hero { 
             background: linear-gradient(rgba(26, 37, 47, 0.85), rgba(44, 62, 80, 0.85)), url('images/hero-bg.jpg') no-repeat center center/cover; 
             color: white; 
@@ -77,11 +76,10 @@
         .hero h1 { font-size: 36px; margin-bottom: 15px; color: #fff; line-height: 1.3; text-shadow: 0 2px 4px rgba(0,0,0,0.5); }
         .hero p { font-size: 18px; color: #3498db; max-width: 650px; margin: 0 auto 25px; padding: 0 20px; font-weight: 500; }
 
-        /* Định vị Section và Tiêu đề */
         section { scroll-margin-top: 80px; padding: 60px 0; }
         .section-title { font-size: 24px; color: #2c3e50; margin-bottom: 25px; padding-left: 10px; border-left: 5px solid #3498db; }
         
-        /* SLIDER ẢNH CHẠY NGANG VÔ HẠN */
+        /* SLIDER CHẠY NGANG */
         .slider-container {
             width: 100%;
             overflow: hidden;
@@ -137,7 +135,6 @@
         .tech-specs { font-size: 12px; color: #34495e; background: #f8f9fa; padding: 8px; border-radius: 4px; margin-bottom: 15px; border-left: 3px solid #2ecc71; }
         .price { font-weight: bold; color: #e74c3c; font-size: 16px; margin-bottom: 15px; }
         
-        /* Hệ thống Nút bấm */
         .btn { display: inline-block; background-color: #3498db; color: white; padding: 11px 20px; text-align: center; text-decoration: none; border-radius: 4px; font-size: 14px; font-weight: 600; transition: background 0.3s; border: none; cursor: pointer; width: 100%; }
         .btn:hover { background-color: #2980b9; }
         .btn-danger { background-color: #e74c3c; color: white; width: auto; }
@@ -286,7 +283,7 @@
         .form-group input, .form-group textarea { width: 100%; padding: 12px; border-radius: 4px; border: 1px solid #cbd5e1; background: #fff; color: #1e293b; font-size: 14px; transition: border-color 0.2s; }
         .form-group input:focus, .form-group textarea:focus { border-color: #3498db; outline: none; box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15); }
 
-        /* CSS TỐI ƯU RIÊNG CHO KHUNG CHỌN SỐ ĐIỆN THOẠI QUỐC TẾ */
+        /* Cấu hình khung điện thoại quốc tế */
         .iti { width: 100%; display: block; }
         .iti__country-list { background-color: #ffffff; color: #2c3e50; max-width: 320px; z-index: 100; }
         .form-group input[type="tel"] { padding-left: 52px !important; }
@@ -300,7 +297,7 @@
         /* Footer */
         footer { background-color: #1a252f; color: #7f8c8d; text-align: center; padding: 25px 20px; font-size: 13px; margin-top: 40px; }
 
-        /* Responsive Mobile */
+        /* Responsive */
         @media (max-width: 768px) {
             .nav-container { flex-direction: column; gap: 15px; padding: 15px 10px; }
             .logo { flex-direction: column; font-size: 15px; text-align: center; gap: 5px; }
@@ -330,7 +327,7 @@
     <header>
         <div class="nav-container">
             <div class="logo">
-                <img src="image/logo.jpg" alt="Logo KHANH HUYEN">
+                <img src="image/logo.jpg" alt="Logo KHANH HUYEN" width="35" height="35">
                 CÔNG TY CP THƯƠNG MẠI VÀ SẢN XUẤT KHÁNH HUYỀN
             </div>
             <nav>
@@ -343,7 +340,7 @@
                     
                     <li class="lang-selector-wrapper">
                         <select id="lang-select" onchange="changeLanguage(this.value)">
-                            <option value="vi">🇻🇳 VI</option>
+                            <option value="vi">🇲🇳 VI</option>
                             <option value="en">🇬🇧 EN</option>
                             <option value="es">🇪🇸 ES</option>
                         </select>
@@ -368,15 +365,15 @@
                 
                 <div class="slider-container">
                     <div class="slider-track" id="sliderTrack">
-                        <div class="slider-item"><img src="image/busbar.jpg" alt="Hệ thống thanh cái" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/dk.jpg" alt="Mạch điều khiển" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/dkvacanh.jpg" alt="Mạch điều khiển và cánh tủ" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/nganphutai.jpg" alt="Ngăn phụ tải" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/phutainganphutai.jpg" alt="Phụ tải tủ điện" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/tn.jpg" alt="Tủ nguồn" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/tn1.jpg" alt="Chi tiết tủ nguồn" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/toantu.jpg" alt="Tổng quan toàn tủ" loading="lazy"></div>
-                        <div class="slider-item"><img src="image/trongnganphutai.jpg" alt="Bên trong ngăn phụ tải" loading="lazy"></div>
+                        <div class="slider-item"><img src="image/busbar.jpg" alt="Hệ thống thanh cái" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/dk.jpg" alt="Mạch điều khiển" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/dkvacanh.jpg" alt="Mạch điều khiển và cánh tủ" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/nganphutai.jpg" alt="Ngăn phụ tải" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/phutainganphutai.jpg" alt="Phụ tải tủ điện" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/tn.jpg" alt="Tủ nguồn" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/tn1.jpg" alt="Chi tiết tủ nguồn" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/toantu.jpg" alt="Tổng quan toàn tủ" loading="lazy" width="265" height="180"></div>
+                        <div class="slider-item"><img src="image/trongnganphutai.jpg" alt="Bên trong ngăn phụ tải" loading="lazy" width="265" height="180"></div>
                     </div>
                 </div>
 
@@ -434,7 +431,7 @@
                 <div class="grid-3d">
                     <a href="https://autode.sk/4dJTsk1" target="_blank" rel="noopener noreferrer" class="card-3d">
                         <div class="img-container-3d">
-                            <img src="image/TUNAP.png" alt="Mô hình 3D Tủ Nạp">
+                            <img src="image/TUNAP.png" alt="Mô hình 3D Tủ Nạp" width="160" height="140">
                             <div class="badge-3d" data-i18n="rotate-3d">⟳ Xoay 3D</div>
                         </div>
                         <div class="info-3d">
@@ -541,7 +538,6 @@
                     <div class="contact-grid">
                         <div class="contact-wrapper">
                             <form id="ajax-contact-form" action="https://formspree.io/f/mredlzwj" method="POST" class="contact-form">
-                                
                                 <input type="text" name="_gotcha" style="display:none">
 
                                 <div class="form-group">
@@ -576,32 +572,26 @@
         <section id="thong-ke-he-thong" style="background: #141d26; color: #ecf0f1; padding: 35px 0; border-top: 2px solid #3498db;">
             <div class="container">
                 <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 15px; text-align: center;">
-                    
-                    <div style="min-width: 150px;">
+                    <div>
                         <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;" data-i18n="counter-lbl-online">• Đang xem trang</span>
                         <span id="counter-online" style="font-size: 24px; color: #2ecc71; font-weight: bold; text-shadow: 0 0 8px rgba(46, 204, 113, 0.3);">3</span>
                     </div>
-
-                    <div style="min-width: 150px;">
+                    <div>
                         <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;" data-i18n="counter-lbl-today">Hôm nay</span>
                         <span id="counter-today" style="font-size: 24px; color: #ffffff; font-weight: bold;">--</span>
                     </div>
-
-                    <div style="min-width: 150px;">
+                    <div>
                         <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;" data-i18n="counter-lbl-week">Tuần này</span>
                         <span id="counter-week" style="font-size: 24px; color: #ffffff; font-weight: bold;">--</span>
                     </div>
-
-                    <div style="min-width: 150px;">
+                    <div>
                         <span style="display: block; font-size: 11px; color: #95a5a6; text-transform: uppercase;" data-i18n="counter-lbl-month">Tháng này</span>
                         <span id="counter-month" style="font-size: 24px; color: #ffffff; font-weight: bold;">--</span>
                     </div>
-
-                    <div style="min-width: 150px;">
+                    <div>
                         <span style="display: block; font-size: 11px; color: #3498db; text-transform: uppercase; font-weight: 600;" data-i18n="counter-lbl-total">Tổng (từ 01/01/2026)</span>
                         <span id="counter-total" style="font-size: 24px; color: #3498db; font-weight: bold;">--</span>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -612,20 +602,27 @@
     </footer>
 
     <script>
-        // --- LOGIC DIỄN HOẠ MARQUEE CHẠY VÔ HẠN ---
-        window.addEventListener('load', function() {
-            const sliderTrack = document.getElementById('sliderTrack');
-            if (sliderTrack) {
-                sliderTrack.innerHTML += sliderTrack.innerHTML;
-            }
+        // --- KHAI BÁO BIẾN DOM TẬP TRUNG ---
+        const sliderTrack = document.getElementById('sliderTrack');
+        const projectList = document.getElementById('projectList');
+        const contactForm = document.getElementById("ajax-contact-form");
+        const formStatus = document.getElementById("form-status");
+        const submitBtn = document.getElementById("submit-btn");
+        const phoneInput = document.querySelector("#form-phone");
+        const fullPhoneInput = document.querySelector("#full-phone");
+        const onlineElement = document.getElementById('counter-online');
 
-            const list = document.getElementById('projectList');
-            if (list) {
-                list.innerHTML += list.innerHTML; 
+        // --- DIỄN HOẠ MARQUEE VÔ HẠN (CHẠY 1 LẦN DUY NHẤT KHI LOAD) ---
+        let isMarqueeInitialized = false;
+        window.addEventListener('load', function() {
+            if (!isMarqueeInitialized) {
+                if (sliderTrack) sliderTrack.innerHTML += sliderTrack.innerHTML;
+                if (projectList) projectList.innerHTML += projectList.innerHTML;
+                isMarqueeInitialized = true;
             }
         });
 
-        // --- CƠ SỞ DỮ LIỆU ĐA NGÔN NGỮ (DICTIONARY) ---
+        // --- DICTIONARY ĐA NGÔN NGỮ ---
         const resources = {
             vi: {
                 "nav-products": "Sản Phẩm", "nav-models": "Mô Hình 3D", "nav-projects": "Dự Án", "nav-activities": "Hoạt Động", "nav-contact": "Liên Hệ",
@@ -763,9 +760,8 @@
             document.getElementById('lang-select').value = lang;
             document.documentElement.lang = lang;
 
-            const status = document.getElementById("form-status");
-            if(status && currentFormStatusKey && resources[lang][currentFormStatusKey]) {
-                status.innerText = resources[lang][currentFormStatusKey];
+            if(formStatus && currentFormStatusKey && resources[lang][currentFormStatusKey]) {
+                formStatus.innerText = resources[lang][currentFormStatusKey];
             }
         }
 
@@ -774,7 +770,7 @@
             updateContent(lang);
         }
 
-        // --- KHỞI TẠO ĐA NGÔN NGỮ & KHỞI TẠO INPUT ĐIỆN THOẠI QUỐC TẾ ---
+        // --- KHỞI TẠO ĐA NGÔN NGỮ & SỐ ĐIỆN THOẠI QUỐC TẾ ---
         let iti;
         function initInternationalization() {
             const savedLang = localStorage.getItem('kh_selected_lang');
@@ -783,17 +779,10 @@
             } else {
                 const browserLang = navigator.language || navigator.userLanguage;
                 let defaultLang = 'vi'; 
-                if (browserLang.startsWith('en')) {
-                    defaultLang = 'en';
-                } else if (browserLang.startsWith('es')) {
-                    defaultLang = 'es';
-                }
+                if (browserLang.startsWith('en')) defaultLang = 'en';
+                else if (browserLang.startsWith('es')) defaultLang = 'es';
                 updateContent(defaultLang);
             }
-
-            // Kích hoạt intl-tel-input
-            const phoneInput = document.querySelector("#form-phone");
-            const fullPhoneInput = document.querySelector("#full-phone");
 
             if (phoneInput) {
                 iti = window.intlTelInput(phoneInput, {
@@ -809,7 +798,6 @@
                     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
                 });
 
-                // Lắng nghe sự kiện để tự động gộp đầu số quốc gia vào thẻ ẩn khi người dùng nhập xong
                 phoneInput.addEventListener('blur', function() {
                     if (iti.isValidNumber()) {
                         fullPhoneInput.value = iti.getNumber(); 
@@ -820,22 +808,12 @@
             }
         }
 
-        window.addEventListener('DOMContentLoaded', initInternationalization);
-
-        // --- XỬ LÝ GỬI FORM ĐĂNG KÝ QUA AJAX ---
-        const form = document.getElementById("ajax-contact-form");
-        const status = document.getElementById("form-status");
-        const submitBtn = document.getElementById("submit-btn");
-
-        if (form) {
-            form.addEventListener("submit", function(event) {
+        // --- XỬ LÝ GỬI FORM AJAX ---
+        if (contactForm) {
+            contactForm.addEventListener("submit", function(event) {
                 event.preventDefault(); 
-                
                 const currentLang = localStorage.getItem('kh_selected_lang') || 'vi';
                 
-                // Đồng bộ số điện thoại lần cuối trước khi submit
-                const fullPhoneInput = document.querySelector("#full-phone");
-                const phoneInput = document.querySelector("#form-phone");
                 if (iti) {
                     fullPhoneInput.value = iti.getNumber() || (iti.getDialCode() + " " + phoneInput.value);
                 }
@@ -844,45 +822,47 @@
                 currentFormStatusKey = "msg-sending";
                 submitBtn.innerText = resources[currentLang][currentFormStatusKey];
                 
-                const formElements = form.querySelectorAll("input, textarea");
+                const formElements = contactForm.querySelectorAll("input, textarea");
                 formElements.forEach(el => el.disabled = true);
                 
-                status.className = ""; 
-                status.style.display = "none";
-                const data = new FormData(form);
+                formStatus.className = ""; 
+                formStatus.style.display = "none"; // Reset ẩn ban đầu
+                const data = new FormData(contactForm);
                 
-                fetch(form.action, {
-                    method: form.method,
+                fetch(contactForm.action, {
+                    method: contactForm.method,
                     body: data,
                     headers: { 'Accept': 'application/json' }
                 })
                 .then(response => {
+                    formStatus.style.display = "block"; // ÉP BUỘC HIỂN THỊ LẠI MÀN HÌNH
                     if (response.ok) {
                         currentFormStatusKey = "msg-success";
-                        status.innerText = resources[localStorage.getItem('kh_selected_lang') || 'vi'][currentFormStatusKey];
-                        status.className = "success";
-                        form.reset(); 
+                        formStatus.innerText = resources[localStorage.getItem('kh_selected_lang') || 'vi'][currentFormStatusKey];
+                        formStatus.className = "success";
+                        contactForm.reset(); 
                         setTimeout(() => { 
-                            status.className = ""; 
-                            status.style.display = "none"; 
+                            formStatus.className = ""; 
+                            formStatus.style.display = "none"; 
                             currentFormStatusKey = "";
                         }, 6000);
                     } else {
                         currentFormStatusKey = "msg-failed";
-                        status.innerText = resources[localStorage.getItem('kh_selected_lang') || 'vi'][currentFormStatusKey];
-                        status.className = "error";
+                        formStatus.innerText = resources[localStorage.getItem('kh_selected_lang') || 'vi'][currentFormStatusKey];
+                        formStatus.className = "error";
                     }
                 })
                 .catch(error => {
-                    status.innerText = "Network error. Please try again.";
-                    status.className = "error";
+                    formStatus.style.display = "block";
+                    formStatus.innerText = "Network error. Please try again.";
+                    formStatus.className = "error";
                 })
                 .finally(() => {
                     submitBtn.disabled = false;
                     const activeLang = localStorage.getItem('kh_selected_lang') || 'vi';
                     submitBtn.innerText = resources[activeLang]["btn-submit-form"];
                     formElements.forEach(el => el.disabled = false);
-                    status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    formStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 });
             });
         }
@@ -891,10 +871,7 @@
         function initTrafficCounter() {
             const startDate = new Date('2026-01-01T00:00:00');
             const now = new Date();
-            
-            const diffTime = Math.abs(now - startDate);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            
+            const diffDays = Math.ceil(Math.abs(now - startDate) / (1000 * 60 * 60 * 24));
             const avgVisitsPerDay = 145; 
             let baseTotal = diffDays * avgVisitsPerDay;
 
@@ -902,37 +879,32 @@
                 localStorage.setItem('kh_total_visits', baseTotal);
                 localStorage.setItem('kh_today_visits', Math.floor(Math.random() * 40) + 60); 
             } else {
-                let currentTotal = parseInt(localStorage.getItem('kh_total_visits')) + 1;
-                let currentToday = parseInt(localStorage.getItem('kh_today_visits')) + 1;
-                localStorage.setItem('kh_total_visits', currentTotal);
-                localStorage.setItem('kh_today_visits', currentToday);
+                localStorage.setItem('kh_total_visits', parseInt(localStorage.getItem('kh_total_visits')) + 1);
+                localStorage.setItem('kh_today_visits', parseInt(localStorage.getItem('kh_today_visits')) + 1);
             }
 
             const totalVisits = parseInt(localStorage.getItem('kh_total_visits'));
             const todayVisits = parseInt(localStorage.getItem('kh_today_visits'));
 
-            const weekVisits = todayVisits + Math.floor(avgVisitsPerDay * 4.3);
-            const monthVisits = todayVisits + Math.floor(avgVisitsPerDay * 22.5);
-
             document.getElementById('counter-today').innerText = todayVisits.toLocaleString();
-            document.getElementById('counter-week').innerText = weekVisits.toLocaleString();
-            document.getElementById('counter-month').innerText = monthVisits.toLocaleString();
+            document.getElementById('counter-week').innerText = (todayVisits + Math.floor(avgVisitsPerDay * 4.3)).toLocaleString();
+            document.getElementById('counter-month').innerText = (todayVisits + Math.floor(avgVisitsPerDay * 22.5)).toLocaleString();
             document.getElementById('counter-total').innerText = totalVisits.toLocaleString();
 
-            const onlineElement = document.getElementById('counter-online');
             function updateOnlineStatus() {
-                let currentOnline = Math.floor(Math.random() * 8) + 2; 
                 if(onlineElement) {
-                    onlineElement.innerText = currentOnline;
+                    onlineElement.innerText = Math.floor(Math.random() * 8) + 2;
                 }
             }
-            
             updateOnlineStatus();
             setInterval(updateOnlineStatus, 4000);
         }
 
-        window.addEventListener('DOMContentLoaded', initTrafficCounter);
+        // Kích hoạt khi DOM sẵn sàng
+        window.addEventListener('DOMContentLoaded', () => {
+            initInternationalization();
+            initTrafficCounter();
+        });
     </script>
-
 </body>
 </html>

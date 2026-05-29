@@ -6,8 +6,8 @@
     <title>Kỹ thuật Điện Tàu Thủy - KHANH HUYEN</title>
     
     <link rel="icon" type="image/jpeg" href="image/favicon.jpg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intl-tel-input.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intl-tel-input.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intl-tel-input.css">
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intl-tel-input.min.js"></script>
 
     <style>
         /* Reset và Layout cơ sở */
@@ -608,12 +608,12 @@
         // 2. Khởi tạo Khung nhập Số Điện thoại Quốc tế
         const phoneInput = document.querySelector("#form-phone");
         const fullPhoneHidden = document.querySelector("#full-phone");
-        
+ 
         const iti = window.intlTelInput(phoneInput, {
-            initialCountry: "vn",
-            preferredCountries: ["vn", "us", "es"],
-            separateDialCode: true,
-            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"
+        initialCountry: "vn",
+        preferredCountries: ["vn", "us", "es"],
+        separateDialCode: true,
+        utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
         });
 
         // 3. Cơ sở dữ liệu Ngôn ngữ (i18n)
